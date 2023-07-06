@@ -62,6 +62,7 @@ int main()
         putchar('-');
     }
 
+        int total_sum =0 ;
     // Print the expenditure table
     for (int i = 0; i < range; ++i)
     {
@@ -81,7 +82,14 @@ int main()
         {
             putchar('-');
         }
+
+        total_sum += year_sum;
+
     }
+
+    printf("Average monthly expenditure: %f \n", ((float)total_sum)/range*12);
+    printf("Average over the range of years(%d - %d): %f",init_yr, fnl_yr,((float)total_sum)/range);
+
 
     
 

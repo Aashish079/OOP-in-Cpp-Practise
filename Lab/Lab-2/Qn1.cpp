@@ -1,6 +1,5 @@
 // Write a program to set a structure to hold a date (mm,dd and yy), assign values to the members of the structure and print out the values in the format 11/28/2004 by function. Pass the structure to the function
 
-
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -13,7 +12,7 @@ struct date {
 
 void displayDate(date d){
 
-    cout<<d.month<<'/'<<d.day<<'/'<<d.year<<endl;
+    cout<<"Current Date is: "<<setw(2)<<setfill('0')<<d.month<<'/'<<setw(2)<<setfill('0')<<d.day<<'/'<<setw(4)<<setfill('0')<<d.year<<endl;
 
 }
 
@@ -29,7 +28,6 @@ int main(){
 
     cout << "Enter the day: "<<endl;
     cin >> d1.day;
-
 
     displayDate(d1);
 return 0;
