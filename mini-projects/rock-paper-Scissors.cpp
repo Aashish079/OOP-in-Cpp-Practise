@@ -39,22 +39,30 @@ public:
 
     string get_user_pick()
     {
-
         char user_input;
+        while (1)
+        {
+            cout << "Enter Your Choice(r:Rock, p:Paper, s:scissors)";
+            cin >> user_input;
 
-        cout << "Enter Your Choice(r:Rock, p:Paper, s:scissors)";
-        cin >> user_input;
+            user_input = tolower(user_input);
 
-        if(user_input =='r'){
-            user_pick = "rock";
+            if (user_input == 'r')
+            {
+                user_pick = "rock";
+                break;
+            }
+            else if (user_input == 'p')
+            {
+                user_pick = "paper";
+                break;
+            }
+            else if (user_input == 's')
+            {
+                user_pick = "scissors";
+                break;
+            }
         }
-        else if(user_input == 'p'){
-            user_pick = "paper";
-        }
-        else if(user_input == 's'){
-            user_pick = "scissors";
-        }
-
         return user_pick;
     }
 };
