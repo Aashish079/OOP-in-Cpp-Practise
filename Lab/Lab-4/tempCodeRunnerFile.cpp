@@ -1,4 +1,1 @@
-~Udstring(){
-        delete[] str;
-        cout<<"Memory for object with :"<<str<<" has been deallocated.";
-    }
+ Use static member function if it is useful in the pr

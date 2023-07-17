@@ -34,7 +34,7 @@ int main()
 
     t2.showData();
     t1.setData(5);
-    t2.showData();
+    t1.showData();
     t2.setData(5);
 
 

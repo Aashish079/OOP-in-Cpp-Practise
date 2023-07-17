@@ -2,16 +2,16 @@
 #include <iostream>
 using namespace std;
 
-class Veichle{
+class Park{
     private:
        int num_vehicle;
        int hour;
        int rate;
     
     public:
-        Veichle(int n, int h, int r): num_vehicle(n), hour(h), rate(r){}
+        Park(int n, int h, int r): num_vehicle(n), hour(h), rate(r){}
 
-        Veichle(Veichle& v){
+        Park(Park& v){
             num_vehicle = v.num_vehicle;
             hour = v.hour;
             rate = v.rate;
@@ -28,11 +28,11 @@ class Veichle{
 };
 
 int main(){
-    Veichle v1(14, 8, 20);
+    Park v1(14, 8, 20);
 
     v1.showTotalCharge();
 
-    Veichle v2(v1);
+    Park v2(v1);
 
     v2.showTotalCharge();
     return 0;
