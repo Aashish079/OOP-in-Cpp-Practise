@@ -42,7 +42,7 @@ public:
         char user_input;
         while (1)
         {
-            cout << "Enter Your Choice(r:Rock, p:Paper, s:scissors)";
+            cout << "Enter Your Choice(r:Rock, p:Paper, s:scissors) : ";
             cin >> user_input;
 
             user_input = tolower(user_input);
@@ -65,4 +65,54 @@ public:
         }
         return user_pick;
     }
+
+    string get_result(string user_pick, string computer_pick)
+    {
+
+        if (user_pick == computer_pick)
+        {
+            return "draw";
+        }
+        else if (user_pick == "paper" && computer_pick == "rock")
+        {
+            return "win";
+        }
+        else if (user_pick == "rock" && computer_pick == "scissors")
+        {
+            return "win";
+        }
+        else if (user_pick == "scissors" && computer_pick == "paper")
+        {
+            return "win";
+        }
+        else
+        {
+            return "lose";
+        }
+    }
 };
+
+int main()
+{
+    Game g1;
+    while (1)
+    {
+        char play_again;
+        string usr_pick = g1.get_user_pick();
+        string comp_pick = g1.get_computer_pick();
+        string result = g1.get_result(usr_pick, comp_pick);
+
+        cout << "User Pick: " << usr_pick << endl;
+        cout << "Computer Pick: " << comp_pick << endl;
+        cout << "You " << result << endl;
+
+        cout<<"Do you want to play again?(y/n): ";
+        cin>>play_again;
+
+        if(play_again != 'y'){
+            break;
+        }
+    }
+
+    return 0;
+}
