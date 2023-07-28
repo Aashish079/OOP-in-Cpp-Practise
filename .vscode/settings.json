@@ -3,5 +3,6 @@
     "iostream": "cpp",
     "iomanip": "cpp",
     "__config": "cpp"
-  }
+  },
+  "editor.acceptSuggestionOnEnter": "on"
 }

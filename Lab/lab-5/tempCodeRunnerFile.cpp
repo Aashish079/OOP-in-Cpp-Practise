@@ -1,2 +1,1 @@
-rA = c1 + c2;
-    // rA.showResult();
+Make a particular member function of one class as a friend 

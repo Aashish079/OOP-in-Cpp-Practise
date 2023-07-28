@@ -18,26 +18,26 @@ public:
 
         if (
             // Month 1, 3, 5, 7, 8, 10, 12 has 31 days
-            ((_month == 1 || _month == 3 || _month == 5 || _month == 7 ||
-              _month == 8 || _month == 10 || _month == 12) &&
-             (_day > 31)) ||
+            ((month == 1 || month == 3 || month == 5 || month == 7 ||
+              month == 8 || month == 10 || month == 12) &&
+             (day > 31)) ||
 
             // Month 4, 6, 9, 11 has 30 days
-            ((_month == 4 || _month == 6 || _month == 9 || _month == 11) && (_day > 30)) ||
+            ((month == 4 || month == 6 || month == 9 || month == 11) && (day > 30)) ||
 
             // Month 2 in leap year has 29 days
-            (isLeapYear() && (_month == 2 && _day > 29)) ||
+            (isLeapYear() && (month == 2 && day > 29)) ||
 
             // Month 2 in non-leap year has 28 days
-            (!isLeapYear() && (_month == 2 && _day > 28)))
+            (!isLeapYear() && (month == 2 && day > 28)))
         {
-            _day = 1;
-            _month++;
+            day = 1;
+            month++;
         }
 
-        if (_month > 12)
+        if (month > 12)
         {
-            _month = 1;
+            month = 1;
             year++;
         }
 
@@ -74,8 +74,8 @@ public:
     void display()
     {
         std::cout << year << "-"
-                  << std::setfill('0') << std::setw(2) << _month << "-"
-                  << std::setfill('0') << std::setw(2) << _day << '\n';
+                  << std::setfill('0') << std::setw(2) << month << "-"
+                  << std::setfill('0') << std::setw(2) << day << '\n';
     }
 };
 

@@ -1,0 +1,1 @@
+cout<<notes[i]<<"--->"<<money/notes[i]<<endl;
