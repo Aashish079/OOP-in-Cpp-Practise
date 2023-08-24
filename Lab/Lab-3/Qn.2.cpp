@@ -5,10 +5,10 @@
 using namespace std;
 
 class Number{
-    int num;
+    long num;
 
 public:
-    void setValue(int n){
+    void setValue(long n){
         num = n;
     }
     int getValue(){
@@ -32,7 +32,8 @@ public:
 int main(){
 
     Number n;
-    int num;
+    long num;
+
 
     while(true){
         cout<<"Enter a number: ";

@@ -5,90 +5,114 @@ using namespace std;
 
 class Shape
 {
-private:
-    float length;
+protected:
+    float width, height;
 
 public:
-    Shape(float l = 0) : length(l){};
+    virtual void setShape(int a, int b)
+    {
+        width = a;
+        height = b;
+    }
     virtual float findArea()
     {
-        return length * length;
+        return 0;
     }
-    void displayArea()
+    virtual void display()
     {
-        cout << "Area = " << this->findArea() << endl;
+        cout<<"Shape:"<<endl;
+    }
+
+    virtual ~Shape(){
+        cout<<"Shape destructor Called"<<endl;
     }
 };
 
 class Circle : public Shape
 {
-private:
+protected:
     float radius;
 
 public:
-    Circle(float r) : radius(r){};
+    void setCircle(int r)
+    {
+        radius = r;
+    }
+    void display()
+    {
+        cout << "Circle: " << endl;
+    }
     float findArea()
     {
         return 3.14 * radius * radius;
     }
-    void displayArea()
-    {
-        cout << "Area = " << this->findArea() << endl;
+    ~Circle(){
+        cout<<"Circle destructor Called"<<endl;
     }
 };
 
 class Rectangle : public Shape
 {
-private:
-    float length;
-    float breadth;
-
 public:
-    Rectangle(float l, float b) : length(l), breadth(b){};
+    float setRectangle(int a, int b)
+    {
+        setShape(a, b);
+    }
     float findArea()
     {
-        return length * breadth;
+        return width * height;
     }
-    void displayArea()
+    void display()
     {
-        cout << "Area = " << this->findArea() << endl;
+        cout << "Rectangle:" << endl;
+    }
+    ~Rectangle(){
+        cout<<"Rectangle destructor Called"<<endl;
     }
 };
 
 class Trapezoid : public Shape
 {
 private:
-    float base;
-    float height;
+    float a1, a2;
 
 public:
-    Trapezoid(float b, float h) : base(b), height(h){};
+    void setTrapezoid(int x, int y, int a, int b)
+    {
+        setShape(a, b);
+        a1 = x;
+        a2 = y;
+    }
     float findArea()
     {
-        return 0.5 * base * height;
+        return 0.5 * (a1 + a2) * height;
     }
-    void displayArea()
+    void display()
     {
-        cout << "Area = " << this->findArea() << endl;
+        cout << "Trapezoid:" << endl;
+    }
+    ~Trapezoid(){
+        cout<<"Trapezoid destructor Called"<<endl;
     }
 };
 
 int main()
 {
-    // Circle c1(3);
-    // Rectangle r1(4, 5);
-    // Trapezoid t1(5, 6);
+    Circle* c1 = new Circle;
+    Rectangle* r1 = new Rectangle;
+    Trapezoid *t1 = new Trapezoid;
 
-    // c1.findArea();
-    // c1.displayArea();
+    Shape *shape[3] = {c1, r1, t1};
 
-    // r1.findArea();
-    // r1.displayArea();
+    c1->setCircle(5);
+    r1->setRectangle(5, 8);
+    t1->setTrapezoid(8, 6, 7, 10);
 
-    // t1.findArea();
-    // t1.displayArea();
-    
-    Shape* shape[3];
-    
+    for (int i = 0; i < 3; i++)
+    {
+        shape[i]->display();
+        cout << shape[i]->findArea() << endl;
+        delete shape[i];
+    }
     return 0;
 }

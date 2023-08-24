@@ -105,7 +105,6 @@ int main()
         cout << "User Pick: " << usr_pick << endl;
         cout << "Computer Pick: " << comp_pick << endl;
         cout << "You " << result << endl;
-
         cout<<"Do you want to play again?(y/n): ";
         cin>>play_again;
 

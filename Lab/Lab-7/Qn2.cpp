@@ -5,30 +5,27 @@ using namespace std;
 
 class Person
 {
-    public:
-    Person(int foo){
-        cout<<"Calling Person 1"<<foo<<endl;
+public:
+    void display()
+    {
+        cout << "I'm a Person.";
     }
 };
 
 class Employee : virtual public Person
 {
-public:
-    Employee(int bar):Person(bar){
-        cout<<"Calling Employee[]"<<endl
-    }
-
 };
 
-class Student : public Person
+class Student : virtual public Person
 {
 };
 
-class Manager :
-
-    int
-    main()
+class Manager : public Employee, public Student
 {
-
+};
+int main()
+{
+    Manager m1;
+    m1.display();
     return 0;
 }

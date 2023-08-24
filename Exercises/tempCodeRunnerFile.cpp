@@ -1,1 +1,1 @@
-using namespace BCT;
+cout.width(7);
