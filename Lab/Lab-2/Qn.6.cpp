@@ -20,7 +20,7 @@ return salary*(1+increment);
 
 int main(){
 float CEO = 35000, inf_officer = 25000, sys_analyst=24000, prog= 18000;
-
+cout.setf(ios::left, ios::adjustfield);
 cout<<"----Salary in 2009---- "<< endl;
 cout<<setw(25)<<"Chief executive officer "<<setw(5)<<"Rs."<<setw(5)<<CEO<<endl;
 cout<<setw(25)<<"Information officer"<<setw(5)<<"Rs."<<setw(5)<< inf_officer<<endl;
